@@ -3,6 +3,8 @@ import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { User } from './user/models/user.model';
+import { CourseModule } from './course/course.module';
+import { Course } from './course/models/course.entity';
 const vars = process.env;
 
 @Module({
@@ -21,9 +23,10 @@ const vars = process.env;
       synchronize: true,
       autoLoadModels: true,
       logging: false,
-      models: [User],
+      models: [User, Course],
     }),
     UserModule,
+    CourseModule,
   ],
 })
 export class AppModule {}

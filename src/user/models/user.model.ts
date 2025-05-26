@@ -15,4 +15,10 @@ export class User extends Model {
     allowNull: false,
   })
   age: number;
+
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false,
+  })
+  courseId: number;
 }
